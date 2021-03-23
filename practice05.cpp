@@ -11,15 +11,17 @@ public:
 };
 
 Random::Random() {
-	srand((unsigned)time(0));
+	srand((unsigned)time(0)); //시작할 때마다, 다른 랜덤수를 발생
 }
 
 int Random::next() {
-	return rand();
+	int n = rand();  // 0에서 RAND_MAX(32767) 사이의 랜덤한 정수 발생
+	return n;
 }
 
 int Random::nextInRange(int a, int b) {
-	return rand() % (b - a + 1) + a;
+	int num = rand() % (b - a + 1) + a;     // 2(a)에서 4(b) 까지의 랜덤 정수 발생
+	return num;
 }
 
 
